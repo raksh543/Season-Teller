@@ -12,12 +12,17 @@ import ReactDOM, { render } from 'react-dom';
 // };
 
 class App extends React.Component{
-    constructor(props){
-        super(props);
+    state ={ lat: null, errorMessage: ''};
+    // constructor(props){
+    //     super(props);
 
-        //THIS IS THE ONLY TIME WE DO DIRECT ASSIGNMENT TO this.state
-        this.state = {lat : null, errorMessage: ''};
+    //     //THIS IS THE ONLY TIME WE DO DIRECT ASSIGNMENT TO this.state
+    //     this.state = {lat : null, errorMessage: ''};
 
+
+    // }
+
+    componentDidMount(){
         window.navigator.geolocation.getCurrentPosition(
             (position) => {
                 //we called setStates!!!
